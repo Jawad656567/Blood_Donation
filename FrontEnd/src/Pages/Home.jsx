@@ -414,8 +414,7 @@ export default function BloodDonationHome() {
       `}</style>
 
       {/* ── HERO ──────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden gradient-mesh">
-
+    <section className="relative overflow-hidden gradient-mesh py-7 sm:py-20 lg:min-h-screen lg:flex lg:items-center lg:py-0">
         {/* Decorative background shapes */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-0 w-48 sm:w-72 lg:w-[600px] h-48 sm:h-72 lg:h-[600px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #DC2626, transparent)" }} />
@@ -437,11 +436,11 @@ export default function BloodDonationHome() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 sm:py-12 lg:py-12 w-full">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 sm:py-8 lg:py-12 w-full">
+         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
             {/* Left content */}
             <div>
-              <h1 className="hero-text-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-tight mb-5 sm:mb-6">
+              <h1 className="hero-text-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-tight mb-3 sm:mb-5">
                 <span className="block text-gray-900">Donate</span>
                 <span className="block text-gray-900">Blood,</span>
                 <span className="block shimmer-text">Save Lives</span>
@@ -454,7 +453,7 @@ export default function BloodDonationHome() {
               </p>
 
               {/* CTAs */}
-              <div className="hero-text-4 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <div className="hero-text-4 flex flex-col sm:flex-row flex-wrap gap-3  sm:gap-4">
                 <button
                   className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-white font-bold text-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
                   style={{ background: "linear-gradient(135deg, #DC2626, #7f1d1d)", boxShadow: "0 8px 32px rgba(220,38,38,0.35)" }}
@@ -475,7 +474,7 @@ export default function BloodDonationHome() {
               </div>
 
               {/* Quick stats */}
-              <div className="hero-text-4 flex gap-6 sm:gap-8 mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-100">
+              <div className="hero-text-4 flex gap-6 sm:gap-8 mt-1 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-100">
                 {[
                   { n: "500K+", l: "Active Donors" },
                   { n: "1.2M", l: "Lives Saved" },
@@ -520,7 +519,7 @@ export default function BloodDonationHome() {
       </section>
 
       {/* ── WHY DONATE ────────────────────────────────────────────────────── */}
-      <section className="  sm:py-12 lg:py-12 bg-white">
+      <section className=" sm:py-12 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-10 sm:mb-16">
             <div>
