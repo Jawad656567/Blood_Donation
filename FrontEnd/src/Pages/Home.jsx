@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { HeartPulse, Heart ,Bell, MapPin, PhoneCall, Zap, Target, Star } from "lucide-react";
 
 // ── Animated Counter ──────────────────────────────────────────────────────────
 function useCounter(target, duration = 2000, start = false) {
@@ -413,7 +414,41 @@ export default function BloodDonationHome() {
         }
       `}</style>
 
-      {/* ── HERO ──────────────────────────────────────────────────────────── */}
+
+{/* ── LIFEFLOW HERO SECTION ─────────────────────────────── */}
+<div className="w-full font-sans bg-white">
+
+  {/* ── Banner — aspect-ratio 4/1, no border radius ── */}
+  <div className="relative w-full overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: '4/1' }}>
+
+    {/* Background Image — right side */}
+    <img
+      src="banner.png"
+      alt="Blood Donor"
+      className="absolute right-0 top-0 w-full h-full object-cover object-top"
+    />
+
+    {/* Left Text — scales with banner */}
+    <div className="absolute left-0 top-0 h-full w-[55%] flex flex-col justify-center
+                    px-[4%] py-[3%] z-10">
+      <p className="uppercase tracking-widest text-white/50 mb-[1vw]"
+         style={{ fontSize: 'clamp(7px, 1vw, 11px)' }}>
+        LifeFlow Pakistan
+      </p>
+      <h2 className="text-white font-bold leading-snug mb-[0.5vw]"
+          style={{ fontSize: 'clamp(0.5rem, 2.2vw, 1.55rem)' }}>
+        Her Donation Bachati Hai<br />
+        Ek Zindagi. Aap Bhi<br />
+        Shaamil Hon.
+      </h2>
+      <p className="text-white/60" style={{ fontSize: 'clamp(0.4rem, 1.2vw, 0.82rem)' }}>
+        Her donation saves a life. Join us.
+      </p>
+    </div>
+
+  </div>
+
+{/* ── HERO ──────────────────────────────────────────────────────────── */}
     <section className="relative overflow-hidden gradient-mesh py-7 sm:py-20 lg:min-h-screen lg:flex lg:items-center lg:py-0">
         {/* Decorative background shapes */}
         <div className="absolute inset-0 pointer-events-none">
@@ -441,8 +476,8 @@ export default function BloodDonationHome() {
             {/* Left content */}
             <div>
               <h1 className="hero-text-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-tight mb-3 sm:mb-5">
-                <span className="block text-gray-900">Donate</span>
-                <span className="block text-gray-900">Blood,</span>
+                <span className="block text-gray-900">Donate Blood</span>
+                
                 <span className="block shimmer-text">Save Lives</span>
               </h1>
 
@@ -487,19 +522,19 @@ export default function BloodDonationHome() {
             </div>
 
             {/* Right — image composition */}
-            <div className="hero-img relative hidden lg:block">
+            <div className="hero-img relative hidden lg:block -translate-y-6 lg:-translate-y-14">
               <div className="relative">
                 {/* Main image */}
                 <div
-                  className="relative rounded-3xl overflow-hidden shadow-2xl"
-                  style={{ boxShadow: "0 40px 100px rgba(220,38,38,0.2)" }}
+                  className="relative  overflow-hidden "
+                 
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=600&q=80"
+                    src="life.png"
                     alt="Blood donation"
-                    className="w-full h-[400px] xl:h-[480px] object-cover"
+                    className="w-full h-[400px] xl:h-[480px] "
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(127,29,29,0.3), transparent 60%)" }} />
+                  <div className="absolute inset-0" />
                 </div>
 
                 {/* Floating card 2 */}
@@ -517,6 +552,11 @@ export default function BloodDonationHome() {
           </div>
         </div>
       </section>
+
+
+</div>
+
+
 
       {/* ── WHY DONATE ────────────────────────────────────────────────────── */}
       <section className=" sm:py-12 lg:py-12 bg-white">
@@ -815,11 +855,65 @@ export default function BloodDonationHome() {
               </p>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
-                  { n: "47", u: "Cities Covered", icon: "🏙️" },
-                  { n: "24/7", u: "Emergency Line", icon: "📞" },
-                  { n: "12 min", u: "Avg Response Time", icon: "⚡" },
-                  { n: "99.2%", u: "Match Success Rate", icon: "🎯" },
-                ].map((m) => (
+  {
+    n: "47",
+    u: "Cities Covered",
+    icon: (
+      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M3 21h18M6 21V7l6-4 6 4v14"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9 21v-6h6v6"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
+  },
+  {
+    n: "24/7",
+    u: "Emergency Line",
+    icon: (
+      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.1 10.9a16 16 0 0 0 4 4l1.57-1.14a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
+  },
+  {
+    n: "12 min",
+    u: "Avg Response Time",
+    icon: (
+      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+        <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    ),
+  },
+  {
+    n: "99.2%",
+    u: "Match Success Rate",
+    icon: (
+      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M20 6L9 17l-5-5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+].map((m) => (
                   <div key={m.u} className="glass-card rounded-2xl p-4 sm:p-5">
                     <div className="text-xl sm:text-2xl mb-2">{m.icon}</div>
                     <div className="text-xl sm:text-2xl font-black impact-number">{m.n}</div>
