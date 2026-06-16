@@ -1,164 +1,207 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  FaHome,
-  FaInfoCircle,
-  FaSearch,
-  FaBullhorn,
-  FaEnvelope,
-  FaHeart,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+import { useState, useEffect } from "react";
 
-const Navbar = () => {
+const BloodCenterLogo = () => (
+  <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="22" cy="22" r="21" fill="#DC2626" stroke="#DC2626" strokeWidth="1"/>
+    <circle cx="22" cy="22" r="15" fill="white"/>
+    <circle cx="22" cy="17" r="3" fill="#DC2626"/>
+    <path d="M17 27c0-2.8 2.2-5 5-5s5 2.2 5 5" fill="#DC2626"/>
+    <circle cx="13.5" cy="19" r="2.3" fill="#DC2626"/>
+    <path d="M10 27c0-2 1.6-3.7 3.5-3.7" stroke="#DC2626" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+    <circle cx="30.5" cy="19" r="2.3" fill="#DC2626"/>
+    <path d="M34 27c0-2-1.6-3.7-3.5-3.7" stroke="#DC2626" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+    <path d="M22 36 C22 36, 19.5 32.5, 19.5 31 C19.5 29.6 20.6 28.5 22 28.5 C23.4 28.5 24.5 29.6 24.5 31 C24.5 32.5 22 36 22 36Z" fill="#DC2626"/>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/>
+  </svg>
+);
+
+const YoutubeIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+    <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#2563EB"/>
+  </svg>
+);
+
+const MenuIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <line x1="18" y1="6" x2="6" y2="18"/>
+    <line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
+
+const navLinks = [
+  "ABOUT US",
+  "DONATE BLOOD",
+  "GET INVOLVED",
+  "OUR MISSION",
+  "HOW TO HELP",
+  "CONTACTS",
+];
+
+const SocialIcons = () => (
+  <div className="flex items-center gap-1.5">
+    <a href="#" aria-label="Facebook" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
+      <FacebookIcon />
+    </a>
+    <a href="#" aria-label="Instagram" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
+      <InstagramIcon />
+    </a>
+    <a href="#" aria-label="YouTube" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
+      <YoutubeIcon />
+    </a>
+  </div>
+);
+
+export default function BloodCenterNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const menuItems = [
-    { icon: <FaHome size={18} />, label: "Home", path: "/" },
-    { icon: <FaInfoCircle size={18} />, label: "About", path: "/about" },
-    { icon: <FaSearch size={18} />, label: "Find Donors", path: "/find" },
-    { icon: <FaBullhorn size={18} />, label: "Campaigns", path: "/campaigns" },
-    { icon: <FaEnvelope size={18} />, label: "Contact", path: "/contact" },
-  ];
+  // 900px breakpoint check
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 900);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // Close menu on resize to desktop
+  useEffect(() => {
+    if (!isMobile) setMenuOpen(false);
+  }, [isMobile]);
 
   return (
-    <nav className="w-full px-4 py-2 flex items-center justify-between bg-white shadow-md shadow-black/10 relative">
-      {/* Logo */}
-      <Link to="/home" className="flex items-center space-x-3">
-        <div className="w-12 h-12 rounded-xl overflow-hidden">
-          <img
-            src="blood.svg"
-            alt="Blood Donation"
-            className="w-full h-full object-cover"
-          />
-        </div>
+    <div className="w-full font-sans">
 
-        <h1 className="text-2xl font-extrabold text-gray-900">
-          BloodLink
-        </h1>
-      </Link>
+      {/* ══════════════ TOP BAR ══════════════ */}
+      <div className="w-full bg-white border-b border-gray-200">
+        <div className="px-5 py-3 flex items-center justify-between">
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex flex-1 justify-center">
-        <div className="flex items-center space-x-8 px-6 py-2 rounded-full border border-gray-200 bg-white shadow-sm">
-          {menuItems.map((item, idx) => (
-            <Link
-              key={idx}
-              to={item.path}
-              className="flex flex-col items-center group transition-all duration-300"
-            >
-              <span className="text-gray-500 group-hover:text-red-600 group-hover:scale-110 transition-all">
-                {item.icon}
-              </span>
-
-              <span className="text-[11px] text-gray-500 group-hover:text-red-600">
-                {item.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Right Side */}
-      <div className="flex items-center lg:gap-2">
-        {/* Dark / Light Icon */}
-        <button className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:opacity-70">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="black"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-          </svg>
-        </button>
-
-        <Link
-          to="/register-donor"
-          className="hidden md:flex items-center gap-2 px-6 py-2 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
-        >
-          <FaHeart />
-          Register as Donor
-        </Link>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 rounded-lg bg-white shadow"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-full w-72 bg-white shadow-xl z-50 transform ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300`}
-      >
-        {/* Sidebar Header */}
-        <div className="flex items-center gap-3 p-5 border-b">
-          <div className="w-12 h-12 rounded-xl overflow-hidden">
-            <img
-              src="blood.svg"
-              alt="logo"
-              className="w-full h-full object-cover"
-            />
+          {/* Logo — always visible */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            <BloodCenterLogo />
+            <span style={{ fontSize: isMobile ? "18px" : "22px" }} className="font-bold text-gray-900 tracking-tight">
+              Blood Center
+            </span>
           </div>
 
-          <h2 className="font-bold text-lg text-gray-900">
-            BloodLink
-          </h2>
-        </div>
+          {/* Desktop: CTA + Contact + Hours */}
+          {!isMobile && (
+            <div className="flex items-center gap-10 ml-6">
+              {/* CTA */}
+              <div className="flex flex-col items-start leading-tight">
+                <span className="text-[#2563EB] font-bold text-[15px]">Take action — save a life today!</span>
+                <a href="#" className="text-gray-700 text-[14px] underline underline-offset-2 hover:text-[#2563EB] transition-colors">
+                  donation locations
+                </a>
+              </div>
+              {/* Contact */}
+              <div className="flex flex-col items-start leading-snug">
+                <a href="tel:+12345678900" className="text-[#2563EB] text-[14px] underline underline-offset-2 hover:text-blue-800 transition-colors">
+                  +1 (234) 567 89 00
+                </a>
+                <a href="mailto:blood.center@email.com" className="text-[#2563EB] text-[14px] underline underline-offset-2 hover:text-blue-800 transition-colors">
+                  blood.center@email.com
+                </a>
+              </div>
+              {/* Hours */}
+              <div className="flex flex-col items-start leading-snug">
+                <span className="text-[#2563EB] font-bold text-[14px]">9:00 – 18:00</span>
+                <span className="text-gray-600 text-[14px]">Monday – Friday</span>
+              </div>
+            </div>
+          )}
 
-        <button
-          onClick={() => setMenuOpen(false)}
-          className="absolute top-5 right-5"
-        >
-          <FaTimes size={20} />
-        </button>
-
-        {/* Sidebar Links */}
-        <div className="mt-4">
-          {menuItems.map((item, idx) => (
-            <Link
-              key={idx}
-              to={item.path}
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-4 w-full px-6 py-4 hover:bg-red-50 transition"
+          {/* Mobile: Hamburger only */}
+          {isMobile && (
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-gray-700 p-1 ml-auto"
+              aria-label="Toggle menu"
             >
-              {item.icon}
-              <span>{item.label}</span>
-            </Link>
-          ))}
-
-          <div className="px-6 mt-5">
-            <Link
-              to="/register-donor"
-              onClick={() => setMenuOpen(false)}
-              className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2"
-            >
-              <FaHeart />
-              Register as Donor
-            </Link>
-          </div>
+              {menuOpen ? <CloseIcon /> : <MenuIcon />}
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Overlay */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 z-40"
-          onClick={() => setMenuOpen(false)}
-        />
+      {/* ══════════════ DESKTOP NAV BAR ══════════════ */}
+      {!isMobile && (
+        <div className="w-full bg-[#F0F4F8] px-5 flex items-center justify-between min-h-[56px]">
+          {/* Nav links */}
+          <nav className="flex items-center">
+            {navLinks.map((link, i) => (
+              <a
+                key={i}
+                href="#"
+                className="text-[12.5px] font-bold text-gray-800 uppercase px-4 py-5 hover:text-[#DC2626] transition-colors"
+                style={{ letterSpacing: "0.08em" }}
+              >
+                {link}
+              </a>
+            ))}
+          </nav>
+
+          {/* Donate + Social */}
+          <div className="flex items-center gap-3">
+            <button className="bg-[#DC2626] hover:bg-red-700 transition-colors text-white font-bold text-[13px] uppercase px-7 py-3" style={{ letterSpacing: "0.1em" }}>
+              DONATE NOW
+            </button>
+            <SocialIcons />
+          </div>
+        </div>
       )}
-    </nav>
-  );
-};
 
-export default Navbar;
+      {/* ══════════════ MOBILE DROPDOWN ══════════════ */}
+      {isMobile && menuOpen && (
+        <div className="w-full bg-white border-t border-gray-200 shadow-lg">
+
+          {/* Nav links */}
+          <nav className="flex flex-col">
+            {navLinks.map((link, i) => (
+              <a
+                key={i}
+                href="#"
+                onClick={() => setMenuOpen(false)}
+                className="text-[13px] font-bold text-gray-800 uppercase px-5 py-4 border-b border-gray-100 hover:bg-[#F0F4F8] hover:text-[#DC2626] transition-colors"
+                style={{ letterSpacing: "0.08em" }}
+              >
+                {link}
+              </a>
+            ))}
+          </nav>
+
+          {/* Donate + Social side by side */}
+          <div className="px-5 py-4 flex items-center justify-between border-b border-gray-100">
+            <button className="bg-[#DC2626] hover:bg-red-700 transition-colors text-white font-bold text-[13px] uppercase px-5 py-2.5" style={{ letterSpacing: "0.1em" }}>
+              DONATE NOW
+            </button>
+            <SocialIcons />
+          </div>
+
+
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { HeartPulse, Heart ,Bell, MapPin, PhoneCall, Zap, Target, Star } from "lucide-react";
+import { HeartPulse, Heart, Bell, MapPin, PhoneCall, Zap, Target, Star } from "lucide-react";
 
 // ── Animated Counter ──────────────────────────────────────────────────────────
 function useCounter(target, duration = 2000, start = false) {
@@ -415,146 +415,268 @@ export default function BloodDonationHome() {
       `}</style>
 
 
-{/* ── LIFEFLOW HERO SECTION ─────────────────────────────── */}
-<div className="w-full font-sans bg-white">
+      {/* ── LIFEFLOW HERO SECTION ─────────────────────────────── */}
+      <div className="w-full font-sans bg-white">
 
-  {/* ── Banner — aspect-ratio 4/1, no border radius ── */}
-  <div className="relative w-full overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: '4/1' }}>
+     {/* Banner */}
+<div
+  className="relative w-full overflow-hidden bg-[#1a1a1a]"
+  style={{ aspectRatio: "10/5" }}
+>
 
-    {/* Background Image — right side */}
-    <img
-      src="banner.png"
-      alt="Blood Donor"
-      className="absolute right-0 top-0 w-full h-full object-cover object-top"
-    />
+  <img
+    src="banner.png"
+    alt="Blood Donor"
+    className="
+      absolute inset-0
+      w-full h-full
+      object-cover
+      object-left
+      scale-125
+      sm:scale-110
+      md:scale-100
+    "
+  />
 
-    {/* Left Text — scales with banner */}
-    <div className="absolute left-0 top-0 h-full w-[55%] flex flex-col justify-center
-                    px-[4%] py-[3%] z-10">
-      <p className="uppercase tracking-widest text-white/50 mb-[1vw]"
-         style={{ fontSize: 'clamp(7px, 1vw, 11px)' }}>
-        LifeFlow Pakistan
-      </p>
-      <h2 className="text-white font-bold leading-snug mb-[0.5vw]"
-          style={{ fontSize: 'clamp(0.5rem, 2.2vw, 1.55rem)' }}>
-        Her Donation Bachati Hai<br />
-        Ek Zindagi. Aap Bhi<br />
-        Shaamil Hon.
-      </h2>
-      <p className="text-white/60" style={{ fontSize: 'clamp(0.4rem, 1.2vw, 0.82rem)' }}>
-        Her donation saves a life. Join us.
-      </p>
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/25" />
+
+
+  {/* Content */}
+  <div
+    className="
+      absolute
+      left-0
+      top-0
+      h-full
+      w-[85%]
+      sm:w-[75%]
+      md:w-[65%]
+      flex
+      flex-col
+      justify-center
+      px-3
+      sm:px-5
+      md:px-[4%]
+      z-10
+    "
+  >
+
+
+    {/* Heading */}
+    <h2
+      className="
+        text-white
+        font-extrabold
+        leading-tight
+        mb-1
+        text-xs
+        sm:text-lg
+        md:text-3xl
+        lg:text-5xl
+      "
+    >
+      Your Blood Donation
+      <br />
+      Matters. Give Today!
+    </h2>
+
+
+
+    {/* Description */}
+    <p
+      className="
+        text-white
+        font-medium
+        mb-2
+        text-[7px]
+        sm:text-xs
+        md:text-base
+        lg:text-lg
+      "
+    >
+      All types of blood are needed to help patients.
+    </p>
+
+
+
+    {/* Buttons */}
+    <div
+      className="
+        flex
+        gap-2
+        sm:gap-3
+        md:gap-4
+      "
+    >
+
+
+      <button
+        className="
+          bg-red-600
+          hover:bg-red-700
+          text-white
+          font-bold
+          tracking-wide
+          px-2
+          py-[3px]
+          sm:px-4
+          sm:py-2
+          md:px-6
+          md:py-3
+          text-[7px]
+          sm:text-xs
+          md:text-sm
+          rounded-none
+          transition
+        "
+      >
+        REQUEST BLOOD
+      </button>
+
+
+
+      <button
+        className="
+          border
+          sm:border-2
+          border-white
+          text-white
+          hover:bg-white
+          hover:text-red-600
+          font-bold
+          tracking-wide
+          px-2
+          py-[3px]
+          sm:px-4
+          sm:py-2
+          md:px-6
+          md:py-3
+          text-[7px]
+          sm:text-xs
+          md:text-sm
+          rounded-none
+          transition
+        "
+      >
+        FIND DONORS
+      </button>
+
+
     </div>
+
 
   </div>
 
-{/* ── HERO ──────────────────────────────────────────────────────────── */}
-    <section className="relative overflow-hidden gradient-mesh py-7 sm:py-20 lg:min-h-screen lg:flex lg:items-center lg:py-0">
-        {/* Decorative background shapes */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-0 w-48 sm:w-72 lg:w-[600px] h-48 sm:h-72 lg:h-[600px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #DC2626, transparent)" }} />
-          <div className="absolute -bottom-20 left-0 w-48 sm:w-64 lg:w-[400px] h-48 sm:h-64 lg:h-[400px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #EF4444, transparent)" }} />
-        </div>
+</div>
+        {/* ── HERO ──────────────────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden gradient-mesh py-7 sm:py-20 lg:min-h-screen lg:flex lg:items-center lg:py-0">
+          {/* Decorative background shapes */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-20 right-0 w-48 sm:w-72 lg:w-[600px] h-48 sm:h-72 lg:h-[600px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #DC2626, transparent)" }} />
+            <div className="absolute -bottom-20 left-0 w-48 sm:w-64 lg:w-[400px] h-48 sm:h-64 lg:h-[400px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #EF4444, transparent)" }} />
+          </div>
 
-        {/* Floating blood drops */}
-        <div className="absolute top-16 right-16 float-1 hidden lg:block"><BloodDrop size={48} opacity={0.12} /></div>
-        <div className="absolute top-40 right-48 float-2 hidden lg:block"><BloodDrop size={28} opacity={0.08} /></div>
-        <div className="absolute bottom-32 left-16 float-3 hidden lg:block"><BloodDrop size={36} opacity={0.1} /></div>
-        <div className="absolute top-64 left-64 float-4 hidden xl:block"><BloodDrop size={20} opacity={0.07} /></div>
+          {/* Floating blood drops */}
+          <div className="absolute top-16 right-16 float-1 hidden lg:block"><BloodDrop size={48} opacity={0.12} /></div>
+          <div className="absolute top-40 right-48 float-2 hidden lg:block"><BloodDrop size={28} opacity={0.08} /></div>
+          <div className="absolute bottom-32 left-16 float-3 hidden lg:block"><BloodDrop size={36} opacity={0.1} /></div>
+          <div className="absolute top-64 left-64 float-4 hidden xl:block"><BloodDrop size={20} opacity={0.07} /></div>
 
-        {/* Decorative dot grid */}
-        <div
-          className="absolute right-0 top-0 h-full w-1/2 opacity-[0.03] pointer-events-none hidden lg:block"
-          style={{
-            backgroundImage: "radial-gradient(circle, #DC2626 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
+          {/* Decorative dot grid */}
+          <div
+            className="absolute right-0 top-0 h-full w-1/2 opacity-[0.03] pointer-events-none hidden lg:block"
+            style={{
+              backgroundImage: "radial-gradient(circle, #DC2626 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+            }}
+          />
 
-       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 sm:py-8 lg:py-12 w-full">
-         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
-            {/* Left content */}
-            <div>
-              <h1 className="hero-text-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-tight mb-3 sm:mb-5">
-                <span className="block text-gray-900">Donate Blood</span>
-                
-                <span className="block shimmer-text">Save Lives</span>
-              </h1>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 sm:py-8 lg:py-12 w-full">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
+              {/* Left content */}
+              <div>
+                <h1 className="hero-text-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-tight mb-3 sm:mb-5">
+                  <span className="block text-gray-900">Donate Blood</span>
 
-              <p className="hero-text-3 text-gray-500 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-lg font-body">
-                Every 2 seconds, someone in the world needs blood. One donation can save up to
-                <span className="text-red-600 font-semibold"> 3 lives</span>. Be the reason someone
-                gets to go home to their family tonight.
-              </p>
+                  <span className="block shimmer-text">Save Lives</span>
+                </h1>
 
-              {/* CTAs */}
-              <div className="hero-text-4 flex flex-col sm:flex-row flex-wrap gap-3  sm:gap-4">
-                <button
-                  className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-white font-bold text-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
-                  style={{ background: "linear-gradient(135deg, #DC2626, #7f1d1d)", boxShadow: "0 8px 32px rgba(220,38,38,0.35)" }}
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
-                  </svg>
-                  Become a Donor
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-                <button className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl border-2 border-red-200 text-red-600 font-bold text-sm hover:bg-red-50 hover:border-red-400 transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                  </svg>
-                  Request Blood
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </button>
-              </div>
+                <p className="hero-text-3 text-gray-500 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-lg font-body">
+                  Every 2 seconds, someone in the world needs blood. One donation can save up to
+                  <span className="text-red-600 font-semibold"> 3 lives</span>. Be the reason someone
+                  gets to go home to their family tonight.
+                </p>
 
-              {/* Quick stats */}
-              <div className="hero-text-4 flex gap-6 sm:gap-8 mt-1 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-100">
-                {[
-                  { n: "500K+", l: "Active Donors" },
-                  { n: "1.2M", l: "Lives Saved" },
-                  { n: "350+", l: "Partner Hospitals" },
-                ].map((s) => (
-                  <div key={s.l}>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — image composition */}
-            <div className="hero-img relative hidden lg:block -translate-y-6 lg:-translate-y-14">
-              <div className="relative">
-                {/* Main image */}
-                <div
-                  className="relative  overflow-hidden "
-                 
-                >
-                  <img
-                    src="life.png"
-                    alt="Blood donation"
-                    className="w-full h-[400px] xl:h-[480px] "
-                  />
-                  <div className="absolute inset-0" />
+                {/* CTAs */}
+                <div className="hero-text-4 flex flex-col sm:flex-row flex-wrap gap-3  sm:gap-4">
+                  <button
+                    className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-white font-bold text-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+                    style={{ background: "linear-gradient(135deg, #DC2626, #7f1d1d)", boxShadow: "0 8px 32px rgba(220,38,38,0.35)" }}
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
+                    </svg>
+                    Become a Donor
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </button>
+                  <button className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl border-2 border-red-200 text-red-600 font-bold text-sm hover:bg-red-50 hover:border-red-400 transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    Request Blood
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </button>
                 </div>
 
-                {/* Floating card 2 */}
-                <div className="float-2 absolute -top-6 -right-8 bg-white rounded-2xl p-4 shadow-2xl border border-red-50">
-                  <div className="flex items-center gap-1 mt-2">
-                  </div>
+                {/* Quick stats */}
+                <div className="hero-text-4 flex gap-6 sm:gap-8 mt-1 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-100">
+                  {[
+                    { n: "500K+", l: "Active Donors" },
+                    { n: "1.2M", l: "Lives Saved" },
+                    { n: "350+", l: "Partner Hospitals" },
+                  ].map((s) => (
+                    <div key={s.l}>
+                    </div>
+                  ))}
                 </div>
+              </div>
 
-                {/* Heartbeat line */}
-                <div className="absolute bottom-6 left-6 right-6 opacity-70">
-                  <HeartbeatLine />
+              {/* Right — image composition */}
+              <div className="hero-img relative hidden lg:block -translate-y-6 lg:-translate-y-14">
+                <div className="relative">
+                  {/* Main image */}
+                  <div
+                    className="relative  overflow-hidden "
+
+                  >
+                    <img
+                      src="life.png"
+                      alt="Blood donation"
+                      className="w-full h-[400px] xl:h-[480px] "
+                    />
+                    <div className="absolute inset-0" />
+                  </div>
+
+                  {/* Floating card 2 */}
+                  <div className="float-2 absolute -top-6 -right-8 bg-white rounded-2xl p-4 shadow-2xl border border-red-50">
+                    <div className="flex items-center gap-1 mt-2">
+                    </div>
+                  </div>
+
+                  {/* Heartbeat line */}
+                  <div className="absolute bottom-6 left-6 right-6 opacity-70">
+                    <HeartbeatLine />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
 
-</div>
+      </div>
 
 
 
@@ -845,7 +967,7 @@ export default function BloodDonationHome() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-            
+
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-tight mb-5 sm:mb-6">
                 Building a<br />
                 <span className="text-red-500">Healthier Nation</span>
@@ -855,65 +977,65 @@ export default function BloodDonationHome() {
               </p>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
-  {
-    n: "47",
-    u: "Cities Covered",
-    icon: (
-      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M3 21h18M6 21V7l6-4 6 4v14"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M9 21v-6h6v6"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-  },
-  {
-    n: "24/7",
-    u: "Emergency Line",
-    icon: (
-      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.1 10.9a16 16 0 0 0 4 4l1.57-1.14a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-  },
-  {
-    n: "12 min",
-    u: "Avg Response Time",
-    icon: (
-      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-        <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" />
-      </svg>
-    ),
-  },
-  {
-    n: "99.2%",
-    u: "Match Success Rate",
-    icon: (
-      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M20 6L9 17l-5-5"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-].map((m) => (
+                  {
+                    n: "47",
+                    u: "Cities Covered",
+                    icon: (
+                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M3 21h18M6 21V7l6-4 6 4v14"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 21v-6h6v6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                    ),
+                  },
+                  {
+                    n: "24/7",
+                    u: "Emergency Line",
+                    icon: (
+                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.1 10.9a16 16 0 0 0 4 4l1.57-1.14a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                    ),
+                  },
+                  {
+                    n: "12 min",
+                    u: "Avg Response Time",
+                    icon: (
+                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                        <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    ),
+                  },
+                  {
+                    n: "99.2%",
+                    u: "Match Success Rate",
+                    icon: (
+                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M20 6L9 17l-5-5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    ),
+                  },
+                ].map((m) => (
                   <div key={m.u} className="glass-card rounded-2xl p-4 sm:p-5">
                     <div className="text-xl sm:text-2xl mb-2">{m.icon}</div>
                     <div className="text-xl sm:text-2xl font-black impact-number">{m.n}</div>
