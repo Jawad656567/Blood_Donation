@@ -53,7 +53,7 @@ const CloseIcon = () => (
 const navLinks = [
   "ABOUT US",
   "DONATE BLOOD",
-  "GET INVOLVED",
+  "FIND DONORS",
   "OUR MISSION",
   "HOW TO HELP",
   "CONTACTS",
@@ -117,11 +117,11 @@ export default function BloodCenterNavbar() {
               </div>
               {/* Contact */}
               <div className="flex flex-col items-start leading-snug">
-                <a href="tel:+12345678900" className="text-[#2563EB] text-[14px] underline underline-offset-2 hover:text-blue-800 transition-colors">
-                  +1 (234) 567 89 00
+                <a href="tel:+923146767659" className="text-[#2563EB] text-[14px] underline underline-offset-2 hover:text-blue-800 transition-colors">
+                  +92 (314) 6767659 
                 </a>
-                <a href="mailto:blood.center@email.com" className="text-[#2563EB] text-[14px] underline underline-offset-2 hover:text-blue-800 transition-colors">
-                  blood.center@email.com
+                <a href="mailto:ja289327@email.com" className="text-[#2563EB] text-[14px] underline underline-offset-2 hover:text-blue-800 transition-colors">
+                  JawadAli9090@email.com
                 </a>
               </div>
               {/* Hours */}

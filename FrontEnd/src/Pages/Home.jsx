@@ -414,270 +414,119 @@ export default function BloodDonationHome() {
         }
       `}</style>
 
-
       {/* ── LIFEFLOW HERO SECTION ─────────────────────────────── */}
       <div className="w-full font-sans bg-white">
+        <section className="relative w-full min-h-[650px] md:min-h-[500px] flex items-center overflow-hidden">
 
-     {/* Banner */}
-<div
-  className="relative w-full overflow-hidden bg-[#1a1a1a]"
-  style={{ aspectRatio: "10/5" }}
->
-
-  <img
-    src="banner.png"
-    alt="Blood Donor"
-    className="
-      absolute inset-0
-      w-full h-full
-      object-cover
-      object-left
-      scale-125
-      sm:scale-110
-      md:scale-100
-    "
-  />
-
-
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/25" />
-
-
-  {/* Content */}
-  <div
-    className="
-      absolute
-      left-0
-      top-0
-      h-full
-      w-[85%]
-      sm:w-[75%]
-      md:w-[65%]
-      flex
-      flex-col
-      justify-center
-      px-3
-      sm:px-5
-      md:px-[4%]
-      z-10
-    "
-  >
-
-
-    {/* Heading */}
-    <h2
-      className="
-        text-white
-        font-extrabold
-        leading-tight
-        mb-1
-        text-xs
-        sm:text-lg
-        md:text-3xl
-        lg:text-5xl
-      "
-    >
-      Your Blood Donation
-      <br />
-      Matters. Give Today!
-    </h2>
-
-
-
-    {/* Description */}
-    <p
-      className="
-        text-white
-        font-medium
-        mb-2
-        text-[7px]
-        sm:text-xs
-        md:text-base
-        lg:text-lg
-      "
-    >
-      All types of blood are needed to help patients.
-    </p>
-
-
-
-    {/* Buttons */}
-    <div
-      className="
-        flex
-        gap-2
-        sm:gap-3
-        md:gap-4
-      "
-    >
-
-
-      <button
-        className="
-          bg-red-600
-          hover:bg-red-700
-          text-white
-          font-bold
-          tracking-wide
-          px-2
-          py-[3px]
-          sm:px-4
-          sm:py-2
-          md:px-6
-          md:py-3
-          text-[7px]
-          sm:text-xs
-          md:text-sm
-          rounded-none
-          transition
-        "
-      >
-        REQUEST BLOOD
-      </button>
-
-
-
-      <button
-        className="
-          border
-          sm:border-2
-          border-white
-          text-white
-          hover:bg-white
-          hover:text-red-600
-          font-bold
-          tracking-wide
-          px-2
-          py-[3px]
-          sm:px-4
-          sm:py-2
-          md:px-6
-          md:py-3
-          text-[7px]
-          sm:text-xs
-          md:text-sm
-          rounded-none
-          transition
-        "
-      >
-        FIND DONORS
-      </button>
-
-
-    </div>
-
-
-  </div>
-
-</div>
-        {/* ── HERO ──────────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden gradient-mesh py-7 sm:py-20 lg:min-h-screen lg:flex lg:items-center lg:py-0">
-          {/* Decorative background shapes */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 right-0 w-48 sm:w-72 lg:w-[600px] h-48 sm:h-72 lg:h-[600px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #DC2626, transparent)" }} />
-            <div className="absolute -bottom-20 left-0 w-48 sm:w-64 lg:w-[400px] h-48 sm:h-64 lg:h-[400px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #EF4444, transparent)" }} />
-          </div>
-
-          {/* Floating blood drops */}
-          <div className="absolute top-16 right-16 float-1 hidden lg:block"><BloodDrop size={48} opacity={0.12} /></div>
-          <div className="absolute top-40 right-48 float-2 hidden lg:block"><BloodDrop size={28} opacity={0.08} /></div>
-          <div className="absolute bottom-32 left-16 float-3 hidden lg:block"><BloodDrop size={36} opacity={0.1} /></div>
-          <div className="absolute top-64 left-64 float-4 hidden xl:block"><BloodDrop size={20} opacity={0.07} /></div>
-
-          {/* Decorative dot grid */}
+          {/* Desktop Background Image */}
           <div
-            className="absolute right-0 top-0 h-full w-1/2 opacity-[0.03] pointer-events-none hidden lg:block"
+            className="absolute inset-0 hidden md:block bg-cover bg-center"
             style={{
-              backgroundImage: "radial-gradient(circle, #DC2626 1px, transparent 1px)",
-              backgroundSize: "28px 28px",
+              backgroundImage: "url('/banner.png')",
             }}
-          />
+          ></div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 sm:py-8 lg:py-12 w-full">
-            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center">
-              {/* Left content */}
-              <div>
-                <h1 className="hero-text-2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-tight mb-3 sm:mb-5">
-                  <span className="block text-gray-900">Donate Blood</span>
+          {/* Mobile Background Image */}
+          <div
+            className="absolute inset-0 block md:hidden bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/blood_mobile.png')", // Mobile image
+            }}
+          ></div> 
 
-                  <span className="block shimmer-text">Save Lives</span>
-                </h1>
+          {/* Blue Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-sky-900/15 to-transparent"></div>
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+            <div className="max-w-2xl text-white">
 
-                <p className="hero-text-3 text-gray-500 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 max-w-lg font-body">
-                  Every 2 seconds, someone in the world needs blood. One donation can save up to
-                  <span className="text-red-600 font-semibold"> 3 lives</span>. Be the reason someone
-                  gets to go home to their family tonight.
-                </p>
+              <p className="text-white-300 font-semibold uppercase tracking-widest text-sm mb-4">
+                Let's Donate
+              </p>
 
-                {/* CTAs */}
-                <div className="hero-text-4 flex flex-col sm:flex-row flex-wrap gap-3  sm:gap-4">
-                  <button
-                    className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-white font-bold text-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
-                    style={{ background: "linear-gradient(135deg, #DC2626, #7f1d1d)", boxShadow: "0 8px 32px rgba(220,38,38,0.35)" }}
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
-                    </svg>
-                    Become a Donor
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </button>
-                  <button className="group flex items-center justify-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl border-2 border-red-200 text-red-600 font-bold text-sm hover:bg-red-50 hover:border-red-400 transition-all duration-300 hover:-translate-y-0.5 active:scale-95">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                    </svg>
-                    Request Blood
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </button>
-                </div>
+              <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold leading-tight mb-6 drop-shadow-lg">
+                Your Blood Donation
+                <br />
+                Matters. Give Today!
+              </h1>
 
-                {/* Quick stats */}
-                <div className="hero-text-4 flex gap-6 sm:gap-8 mt-1 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-100">
-                  {[
-                    { n: "500K+", l: "Active Donors" },
-                    { n: "1.2M", l: "Lives Saved" },
-                    { n: "350+", l: "Partner Hospitals" },
-                  ].map((s) => (
-                    <div key={s.l}>
-                    </div>
-                  ))}
-                </div>
+              <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed">
+                All types of blood are needed to help patients.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold shadow-lg shadow-red-500/30 transition-all duration-300 hover:scale-105">
+                  Donation Process
+                </button>
+
+                <button className="border-2 border-white hover:bg-white hover:text-red-600 text-white px-8 py-4 rounded-lg font-semibold backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                  Eligibility Criteria
+                </button>
               </div>
 
-              {/* Right — image composition */}
-              <div className="hero-img relative hidden lg:block -translate-y-6 lg:-translate-y-14">
-                <div className="relative">
-                  {/* Main image */}
-                  <div
-                    className="relative  overflow-hidden "
-
-                  >
-                    <img
-                      src="life.png"
-                      alt="Blood donation"
-                      className="w-full h-[400px] xl:h-[480px] "
-                    />
-                    <div className="absolute inset-0" />
-                  </div>
-
-                  {/* Floating card 2 */}
-                  <div className="float-2 absolute -top-6 -right-8 bg-white rounded-2xl p-4 shadow-2xl border border-red-50">
-                    <div className="flex items-center gap-1 mt-2">
-                    </div>
-                  </div>
-
-                  {/* Heartbeat line */}
-                  <div className="absolute bottom-6 left-6 right-6 opacity-70">
-                    <HeartbeatLine />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
-
-
       </div>
 
+
+
+      {/* ── ABOUT BLOOD DONATION SECTION ─────────────────────────────── */}
+      <section className="w-full bg-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+            {/* Left Image */}
+            <div className="relative">
+              <img
+                src="/about.png"
+                alt="Blood Donation"
+                className="w-full h-[350px] md:h-[500px] object-cover rounded-2xl shadow-xl"
+              />
+
+
+            </div>
+
+
+            {/* Right Content */}
+            <div>
+
+              <p className="text-red-600 font-semibold uppercase tracking-widest text-sm mb-4">
+                About Blood Donation
+              </p>
+
+              <h2 className="text-3xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
+                Every Drop Of Blood
+                <span className="block text-red-600">
+                  Can Save A Life
+                </span>
+              </h2>
+
+
+              <p className="text-gray-600 text-1xl leading-relaxed mb-6">
+                Blood donation is a simple process that can make a huge
+                difference in someone's life. Your donation helps patients
+                who need blood during emergencies, surgeries, and treatments.
+              </p>
+
+
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                Join our mission and become a hero by donating blood and
+                supporting people in need.
+              </p>
+
+
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-red-500/30 transition-all duration-300 hover:scale-105">
+                Donate Now
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
 
 
       {/* ── WHY DONATE ────────────────────────────────────────────────────── */}
@@ -1047,18 +896,12 @@ export default function BloodDonationHome() {
             <div className="relative mt-8 lg:mt-0">
               <div className="rounded-3xl overflow-hidden shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80"
+                  src="health.png"
                   alt="Community donation event"
                   className="w-full h-64 sm:h-80 lg:h-[480px] object-cover"
                 />
               </div>
-              <div className="float-1 absolute -bottom-6 -left-6 bg-white border border-red-100 shadow-xl rounded-2xl p-4 text-center w-32 sm:w-36">
-                <div className="text-2xl sm:text-3xl font-black impact-number">4.9</div>
-                <div className="text-xs text-gray-400">Donor Rating</div>
-                <div className="flex justify-center gap-0.5 mt-1">
-                  {[...Array(5)].map((_, i) => <span key={i} className="text-amber-400 text-xs">★</span>)}
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -1089,46 +932,78 @@ export default function BloodDonationHome() {
         </div>
       </section>
 
+{/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
+<section
+  className="py-8 sm:py-12 lg:py-12 relative overflow-hidden bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('find.png')",
+  }}
+>
+  {/* Dark/White Overlay */}
+  <div className="absolute inset-0"></div>
 
-      {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-      <section className="py-8 sm:py-12 lg:py-12 relative overflow-hidden bg-white">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] lg:w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] rounded-full opacity-5 blur-3xl" style={{ background: "radial-gradient(circle, #DC2626, transparent)" }} />
-          <div className="float-1 absolute top-16 left-8 sm:left-16 opacity-10"><BloodDrop size={48} sm:size={64} opacity={1} /></div>
-          <div className="float-2 absolute bottom-16 right-8 sm:right-16 opacity-10"><BloodDrop size={36} sm:size={48} opacity={1} /></div>
-          <div className="float-3 absolute top-32 right-16 sm:right-32 opacity-10"><BloodDrop size={24} sm:size={32} opacity={1} /></div>
-          <div
-            className="absolute inset-0 opacity-[0.02]"
-            style={{
-              backgroundImage: "radial-gradient(circle, #DC2626 1px, transparent 1px)",
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
+  {/* Decorative elements */}
+  <div className="absolute inset-0 pointer-events-none">
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+      w-[400px] sm:w-[600px] lg:w-[800px] 
+      h-[400px] sm:h-[600px] lg:h-[800px] 
+      rounded-full opacity-5 blur-3xl"
+      style={{ background: "radial-gradient(circle, #DC2626, transparent)" }}
+    />
 
-          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-5 sm:mb-6">
-            Be the Reason<br />
-            <span className="text-red-500">Someone Survives</span>
-          </h2>
+    <div className="float-1 absolute top-16 left-8 sm:left-16 opacity-10">
+      <BloodDrop size={48} />
+    </div>
 
-          <p className="text-gray-500 text-base sm:text-lg leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto font-body">
-            Right now, 3 people are waiting for blood in hospitals near you. The donation you make today — in the next hour — could be the one that saves their life. Don't wait for tomorrow.
-          </p>
+    <div className="float-2 absolute bottom-16 right-8 sm:right-16 opacity-10">
+      <BloodDrop size={36} />
+    </div>
 
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
-            <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
-              Donate Blood Today
-            </button>
-            <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
-              Find a Donation Center
-            </button>
-          </div>
+    <div className="float-3 absolute top-32 right-16 sm:right-32 opacity-10">
+      <BloodDrop size={24} />
+    </div>
 
-        </div>
-      </section>
+    <div
+      className="absolute inset-0 opacity-[0.02]"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle, #DC2626 1px, transparent 1px)",
+        backgroundSize: "40px 40px",
+      }}
+    />
+
+  </div>
+
+
+  <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+
+    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-5 sm:mb-6">
+      Be the Reason<br />
+      <span className="text-red-500">Someone Survives</span>
+    </h2>
+
+    <p className="text-gray-500 text-base sm:text-lg leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto font-body">
+      Right now, 3 people are waiting for blood in hospitals near you.
+      The donation you make today — in the next hour — could be the one
+      that saves their life. Don't wait for tomorrow.
+    </p>
+
+    <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
+
+      <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+        Donate Blood Today
+      </button>
+
+      <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+        Find a Donation Center
+      </button>
+
+    </div>
+
+  </div>
+</section>
     </div>
   );
 }
