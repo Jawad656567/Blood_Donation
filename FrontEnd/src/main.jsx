@@ -7,10 +7,11 @@ import Admin from "./Admin/MainAdmin.jsx";
 
 import Home from "./Pages/Home.jsx";
 import About from './Pages/About.jsx';
-import FindDonor from './Pages/FindDonor.jsx';
-import Campaigns from './Pages/Campaigns.jsx';
-import Contact from './Pages/Contact.jsx';
 import Donate from './Pages/Donate.jsx';
+import FindDonor from './Pages/FindDonor.jsx';
+import Mission from './Pages/Mission.jsx';
+import Help from './Pages/Help.jsx';
+import Contact from './Pages/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,11 +19,12 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: 'about', element: <About /> },
-      { path: 'find', element: <FindDonor /> },
-      { path: 'campaigns', element: <Campaigns /> },
+      { path: 'about', element: <Home /> },
+      { path: 'donate-blood', element: <Donate /> },
+      { path: 'find-donors', element: <FindDonor /> },
+      { path: 'mission', element: <Mission /> },
+      { path: 'help', element: <Help /> },
       { path: 'contact', element: <Contact /> },
-      { path: 'donor', element: <Donate /> },
     ],
   },
 

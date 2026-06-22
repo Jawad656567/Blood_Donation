@@ -432,7 +432,7 @@ export default function BloodDonationHome() {
             style={{
               backgroundImage: "url('/blood_mobile.png')", // Mobile image
             }}
-          ></div> 
+          ></div>
 
           {/* Blue Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-sky-900/15 to-transparent"></div>
@@ -492,15 +492,14 @@ export default function BloodDonationHome() {
             {/* Right Content */}
             <div>
 
-              <p className="text-red-600 font-semibold uppercase tracking-widest text-sm mb-4">
-                About Blood Donation
+              <p className="text-black-600 font-semibold uppercase tracking-widest text-sm mb-4">
+                A Gift of Life
               </p>
 
               <h2 className="text-3xl md:text-3xl font-bold text-gray-900 leading-tight mb-6">
-                Every Drop Of Blood
-                <span className="block text-red-600">
-                  Can Save A Life
-                </span>
+                Every Drop Saves Lives
+                <div className="w-1/4 h-1 bg-red-600 rounded mt-3"></div>
+
               </h2>
 
 
@@ -517,7 +516,7 @@ export default function BloodDonationHome() {
               </p>
 
 
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-red-500/30 transition-all duration-300 hover:scale-105">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-semibold shadow-lg shadow-red-500/30 transition-all duration-300 hover:scale-105">
                 Donate Now
               </button>
 
@@ -527,7 +526,6 @@ export default function BloodDonationHome() {
 
         </div>
       </section>
-
 
       {/* ── WHY DONATE ────────────────────────────────────────────────────── */}
       <section className=" sm:py-12 lg:py-12 bg-white">
@@ -596,6 +594,75 @@ export default function BloodDonationHome() {
         </div>
       </section>
 
+
+      <section className="py-10 sm:py-12 lg:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+            {/* Left Content */}
+            <div>
+
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3 sm:mb-4 font-serif">
+                Our Commitment to
+                <br />
+                Health & Community
+              </h3>
+
+              <div className="w-20 sm:w-24 h-1 bg-red-600 rounded-full mb-4 sm:mb-6"></div>
+
+
+              {/* Mobile Short Text */}
+              <p className="block sm:hidden text-sm text-gray-600 leading-relaxed mb-4">
+                Discover the vital role of Blood Center as a leading nonprofit
+                organization dedicated to saving lives through blood donation.
+              </p>
+
+
+              {/* Desktop Full Text */}
+              <div className="hidden sm:block">
+
+                <p className="text-base text-gray-600 leading-relaxed mb-6">
+                  Discover the vital role of Blood Center as a leading nonprofit
+                  organization dedicated to blood donation.
+                </p>
+
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Blood Center is public donation center with blood donation members in
+                  the changing health care system. Founded in 1978, Blood Center is one
+                  of the nation’s oldest and largest nonprofit transfusion medicine
+                  organizations. We provide blood and volunteer services across the US.
+                  With our national footprint, deep community roots and specialized
+                  services, we are the thread that connects people and resources
+                  together to fuel progress in transfusion medicine.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            {/* Right Image */}
+            <div>
+              <img
+                src="/right.png"
+                alt="Blood Donation"
+                className="
+            w-full
+            h-[260px]
+            sm:h-[350px]
+            md:h-[420px]
+            lg:h-[500px]
+            object-cover
+            rounded-3xl
+            shadow-xl
+          "
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── BLOOD GROUPS ORBIT SECTION ───────────────────────────────────── */}
       <section className="py-20 sm:py-24 lg:py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -629,7 +696,7 @@ export default function BloodDonationHome() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
                 <div className="absolute bottom-5 sm:bottom-8 left-5 sm:left-8 right-5 sm:right-8">
-                  <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-semibold">
+                  <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2  bg-red-600 text-white text-xs sm:text-sm font-semibold">
                     Blood Donation
                   </span>
 
@@ -710,106 +777,6 @@ export default function BloodDonationHome() {
         </div>
       </section>
 
-      {/* ── SUCCESS STORIES (UPDATED MEDICAL VERSION) ───────────────────── */}
-      <section className="py-8 sm:py-12 lg:py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-
-          {/* Heading */}
-          <div className="text-center mb-10 sm:mb-14">
-            <span className="inline-block text-red-500 text-xs font-bold tracking-widest uppercase mb-3 bg-red-50 px-4 py-1.5 rounded-full">
-              Medical Impact
-            </span>
-
-            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-3">
-              Lives Saved Through Blood Donation
-            </h2>
-
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-              Every donation supports hospitals, emergency care, and life-saving treatments around the world.
-            </p>
-          </div>
-
-          {/* Cards */}
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
-
-            {[
-              {
-                img: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80",
-                name: "Pediatric Patient Care",
-                tag: "Child Recovery",
-                story:
-                  "Young patients receiving critical blood transfusions during hospital treatment for serious conditions, supported by donor contributions.",
-                color: "#DC2626",
-              },
-              {
-                img: "https://images.unsplash.com/photo-1580281657527-47f249e8f4df?auto=format&fit=crop&w=800&q=80",
-                name: "Surgical Team Support",
-                tag: "Emergency Surgery",
-                story:
-                  "Surgeons rely on immediate blood availability during complex operations where every second determines survival.",
-                color: "#EF4444",
-              },
-              {
-                img: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=80",
-                name: "Emergency Response Unit",
-                tag: "Trauma Care",
-                story:
-                  "Emergency departments depend on rapid blood transfusions to stabilize accident and trauma patients.",
-                color: "#B91C1C",
-              },
-            ].map((s, i) => {
-              const [ref, inView] = useInView();
-
-              return (
-                <div
-                  key={i}
-                  ref={ref}
-                  className="story-card relative rounded-2xl overflow-hidden group cursor-pointer"
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? "scale(1)" : "scale(0.95)",
-                    transition: `opacity 0.6s ease ${i * 150}ms, transform 0.6s ease ${i * 150}ms`,
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.1)",
-                  }}
-                >
-                  {/* Image */}
-                  <img
-                    src={s.img}
-                    alt={s.name}
-                    className="w-full h-56 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-
-                  {/* Overlay Gradient */}
-                  <div
-                    className="story-overlay absolute inset-0 opacity-0"
-                    style={{
-                      background: `linear-gradient(to top, ${s.color}ee, transparent 50%)`,
-                    }}
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                    <span className="inline-block text-xs font-bold px-2 py-0.5 rounded-full bg-red-600 text-white mb-2">
-                      {s.tag}
-                    </span>
-
-                    <h3 className="text-white font-black text-base sm:text-lg mb-1">
-                      {s.name}
-                    </h3>
-
-                    <p className="text-gray-300 text-xs leading-relaxed group-hover:text-white transition-colors duration-300">
-                      {s.story}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-
-          </div>
-        </div>
-      </section>
 
       {/* ── COMMUNITY IMPACT ──────────────────────────────────────────────── */}
       <section className="py-8 sm:py-12 lg:py-12 bg-white">
@@ -827,10 +794,10 @@ export default function BloodDonationHome() {
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   {
-                    n: "47",
-                    u: "Cities Covered",
+                    n: "365",
+                    u: "Days of Service",
                     icon: (
-                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                      <svg className="w-5 h-5 text-gray-900 " viewBox="0 0 24 24" fill="none">
                         <path
                           d="M3 21h18M6 21V7l6-4 6 4v14"
                           stroke="currentColor"
@@ -850,7 +817,7 @@ export default function BloodDonationHome() {
                     n: "24/7",
                     u: "Emergency Line",
                     icon: (
-                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                      <svg className="w-5 h-5 text-gray-900 " viewBox="0 0 24 24" fill="none">
                         <path
                           d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.1 10.9a16 16 0 0 0 4 4l1.57-1.14a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"
                           stroke="currentColor"
@@ -863,7 +830,7 @@ export default function BloodDonationHome() {
                     n: "12 min",
                     u: "Avg Response Time",
                     icon: (
-                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                      <svg className="w-5 h-5 text-gray-900 " viewBox="0 0 24 24" fill="none">
                         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                         <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" />
                       </svg>
@@ -873,7 +840,7 @@ export default function BloodDonationHome() {
                     n: "99.2%",
                     u: "Match Success Rate",
                     icon: (
-                      <svg className="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none">
+                      <svg className="w-5 h-5 text-gray-900 " viewBox="0 0 24 24" fill="none">
                         <path
                           d="M20 6L9 17l-5-5"
                           stroke="currentColor"
@@ -885,9 +852,11 @@ export default function BloodDonationHome() {
                     ),
                   },
                 ].map((m) => (
-                  <div key={m.u} className="glass-card rounded-2xl p-4 sm:p-5">
+                  <div key={m.u} className="glass-card p-4 sm:p-5">
                     <div className="text-xl sm:text-2xl mb-2">{m.icon}</div>
-                    <div className="text-xl sm:text-2xl font-black impact-number">{m.n}</div>
+                    <div className="text-xl sm:text-2xl font-black text-gray-900 ">
+                      {m.n}
+                    </div>
                     <div className="text-gray-500 text-xs mt-1">{m.u}</div>
                   </div>
                 ))}
@@ -901,11 +870,14 @@ export default function BloodDonationHome() {
                   className="w-full h-64 sm:h-80 lg:h-[480px] object-cover"
                 />
               </div>
-             
+
             </div>
           </div>
         </div>
       </section>
+
+
+
 
       {/* ── PARTNERS ──────────────────────────────────────────────────────── */}
       <section className="py-12 sm:py-16 bg-white border-y border-gray-100">
@@ -932,78 +904,79 @@ export default function BloodDonationHome() {
         </div>
       </section>
 
-{/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
-<section
-  className="py-8 sm:py-12 lg:py-12 relative overflow-hidden bg-cover bg-center"
-  style={{
-    backgroundImage:
-      "url('find.png')",
-  }}
->
-  {/* Dark/White Overlay */}
-  <div className="absolute inset-0"></div>
 
-  {/* Decorative elements */}
-  <div className="absolute inset-0 pointer-events-none">
+      {/* ── FINAL CTA ─────────────────────────────────────────────────────── */}
+      <section
+        className="py-8 sm:py-12 lg:py-12 relative overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('find.png')",
+        }}
+      >
+        {/* Dark/White Overlay */}
+        <div className="absolute inset-0"></div>
 
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+        {/* Decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
       w-[400px] sm:w-[600px] lg:w-[800px] 
       h-[400px] sm:h-[600px] lg:h-[800px] 
       rounded-full opacity-5 blur-3xl"
-      style={{ background: "radial-gradient(circle, #DC2626, transparent)" }}
-    />
+            style={{ background: "radial-gradient(circle, #DC2626, transparent)" }}
+          />
 
-    <div className="float-1 absolute top-16 left-8 sm:left-16 opacity-10">
-      <BloodDrop size={48} />
-    </div>
+          <div className="float-1 absolute top-16 left-8 sm:left-16 opacity-10">
+            <BloodDrop size={48} />
+          </div>
 
-    <div className="float-2 absolute bottom-16 right-8 sm:right-16 opacity-10">
-      <BloodDrop size={36} />
-    </div>
+          <div className="float-2 absolute bottom-16 right-8 sm:right-16 opacity-10">
+            <BloodDrop size={36} />
+          </div>
 
-    <div className="float-3 absolute top-32 right-16 sm:right-32 opacity-10">
-      <BloodDrop size={24} />
-    </div>
+          <div className="float-3 absolute top-32 right-16 sm:right-32 opacity-10">
+            <BloodDrop size={24} />
+          </div>
 
-    <div
-      className="absolute inset-0 opacity-[0.02]"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle, #DC2626 1px, transparent 1px)",
-        backgroundSize: "40px 40px",
-      }}
-    />
+          <div
+            className="absolute inset-0 opacity-[0.02]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, #DC2626 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
 
-  </div>
+        </div>
 
 
-  <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
 
-    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-5 sm:mb-6">
-      Be the Reason<br />
-      <span className="text-red-500">Someone Survives</span>
-    </h2>
+          <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-5 sm:mb-6">
+            Be the Reason<br />
+            <span className="text-red-500">Someone Survives</span>
+          </h2>
 
-    <p className="text-gray-500 text-base sm:text-lg leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto font-body">
-      Right now, 3 people are waiting for blood in hospitals near you.
-      The donation you make today — in the next hour — could be the one
-      that saves their life. Don't wait for tomorrow.
-    </p>
+          <p className="text-gray-500 text-base sm:text-lg leading-relaxed mb-10 sm:mb-12 max-w-2xl mx-auto font-body">
+            Right now, 3 people are waiting for blood in hospitals near you.
+            The donation you make today — in the next hour — could be the one
+            that saves their life. Don't wait for tomorrow.
+          </p>
 
-    <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
 
-      <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
-        Donate Blood Today
-      </button>
+            <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+              Donate Blood Today
+            </button>
 
-      <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
-        Find a Donation Center
-      </button>
+            <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+              Find a Donation Center
+            </button>
 
-    </div>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
     </div>
   );
 }
