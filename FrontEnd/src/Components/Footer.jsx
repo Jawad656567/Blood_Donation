@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BloodCenterLogo = () => (
   <svg
@@ -42,7 +43,7 @@ const BloodCenterLogo = () => (
 
 const FacebookIcon = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
@@ -56,17 +57,17 @@ const InstagramIcon = () => (
     stroke="white"
     strokeWidth="2"
   >
-    <rect x="2" y="2" width="20" height="20" rx="5"/>
-    <circle cx="12" cy="12" r="4"/>
-    <circle cx="17.5" cy="6.5" r="0.5" fill="white"/>
+    <rect x="2" y="2" width="20" height="20" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.5" fill="white" />
   </svg>
 );
 
 
 const YoutubeIcon = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="white">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-    <polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="#0F172A"/>
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+    <polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="#0F172A" />
   </svg>
 );
 
@@ -114,7 +115,6 @@ export default function BloodFooter() {
 
 
 
-
           {/* Links */}
           <div>
 
@@ -122,35 +122,45 @@ export default function BloodFooter() {
               Useful Links
             </h3>
 
-
             <ul className="space-y-3 text-sm text-gray-300">
 
               <li className="hover:text-red-500 transition cursor-pointer">
-                About Us
+                <Link to="/about">
+                  About Us
+                </Link>
               </li>
 
-              <li className="hover:text-red-500 transition cursor-pointer">
-                Donate Blood
-              </li>
 
               <li className="hover:text-red-500 transition cursor-pointer">
-                Find Donors
+                <Link to="/donate-blood">
+                  Donate Blood
+                </Link>
               </li>
 
-              <li className="hover:text-red-500 transition cursor-pointer">
-                Our Mission
-              </li>
 
               <li className="hover:text-red-500 transition cursor-pointer">
-                Contact
+                <Link to="/find-donors">
+                  Find Donors
+                </Link>
+              </li>
+
+
+              <li className="hover:text-red-500 transition cursor-pointer">
+                <Link to="/mission">
+                  Our Mission
+                </Link>
+              </li>
+
+
+              <li className="hover:text-red-500 transition cursor-pointer">
+                <Link to="/contact">
+                  Contact
+                </Link>
               </li>
 
             </ul>
 
-
           </div>
-
-
 
 
           {/* Contact */}
@@ -164,26 +174,36 @@ export default function BloodFooter() {
             <div className="space-y-4 text-sm text-gray-300">
 
               <p>
-                📞 +92 (314) 6767659
+                📞
+                <a
+                  href="tel:+923146767659"
+                  className="hover:text-red-500 transition"
+                >
+                  +92 (314) 6767659
+                </a>
               </p>
 
 
               <p>
-                ✉ JawadAli9090@email.com
+                ✉
+                <a
+                  href="mailto:JawadAli9090@email.com"
+                  className="hover:text-red-500 transition"
+                >
+                  JawadAli9090@email.com
+                </a>
               </p>
 
 
               <p>
-                🕒 Monday - Friday
+                🕒 Open 24 Hours
                 <br />
-                9:00 AM - 18:00 PM
+                Fast & reliable service
               </p>
-
 
             </div>
 
           </div>
-
 
 
 
@@ -203,20 +223,34 @@ export default function BloodFooter() {
 
             <div className="flex gap-3">
 
-              <a className="w-10 h-10 bg-[#2563EB] flex items-center justify-center hover:scale-110 transition">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#2563EB] flex items-center justify-center hover:scale-110 transition"
+              >
                 <FacebookIcon />
               </a>
 
 
-              <a className="w-10 h-10 bg-[#2563EB] flex items-center justify-center hover:scale-110 transition">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#2563EB] flex items-center justify-center hover:scale-110 transition"
+              >
                 <InstagramIcon />
               </a>
 
 
-              <a className="w-10 h-10 bg-[#2563EB] flex items-center justify-center hover:scale-110 transition">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-[#2563EB] flex items-center justify-center hover:scale-110 transition"
+              >
                 <YoutubeIcon />
               </a>
-
 
             </div>
 

@@ -65,7 +65,7 @@ const SocialIcons = () => (
     <a href="#" aria-label="Facebook" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
       <FacebookIcon />
     </a>
-    <a href="#" aria-label="Instagram" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
+    <a href="" aria-label="Instagram" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
       <InstagramIcon />
     </a>
     <a href="#" aria-label="YouTube" className="w-9 h-9 bg-[#2563EB] flex items-center justify-center hover:bg-blue-700 transition-colors">
@@ -127,8 +127,12 @@ export default function BloodCenterNavbar() {
               </div>
               {/* Hours */}
               <div className="flex flex-col items-start leading-snug">
-                <span className="text-[#2563EB] font-bold text-[14px]">9:00 – 18:00</span>
-                <span className="text-gray-600 text-[14px]">Monday – Friday</span>
+                <span className="text-[#2563EB] font-bold text-[14px]">
+                  Open 24 Hours
+                </span>
+                <span className="text-gray-600 text-[14px]">
+                  Fast & reliable service
+                </span>
               </div>
             </div>
           )}
@@ -168,12 +172,13 @@ export default function BloodCenterNavbar() {
           {/* Donate + Social */}
           <div className="flex items-center gap-3">
 
-            <button
-              className="bg-[#DC2626] hover:bg-red-700 transition-colors text-white font-bold text-[13px] uppercase px-7 py-3"
+            <Link
+              to="/donate-blood"
+              className="bg-[#DC2626] hover:bg-red-700 transition-colors text-white font-bold text-[13px] uppercase px-4 py-3 inline-block"
               style={{ letterSpacing: "0.1em" }}
             >
               DONATE NOW
-            </button>
+            </Link>
 
             <SocialIcons />
 

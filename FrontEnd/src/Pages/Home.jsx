@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { HeartPulse, Heart, Bell, MapPin, PhoneCall, Zap, Target, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // ── Animated Counter ──────────────────────────────────────────────────────────
 function useCounter(target, duration = 2000, start = false) {
@@ -516,9 +517,12 @@ export default function BloodDonationHome() {
               </p>
 
 
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-semibold shadow-lg shadow-red-500/30 transition-all duration-300 hover:scale-105">
+              <Link
+                to="/donate-blood"
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-semibold shadow-lg shadow-red-500/30 transition-all duration-300 hover:scale-105 inline-block"
+              >
                 Donate Now
-              </button>
+              </Link>
 
             </div>
 
@@ -965,13 +969,20 @@ export default function BloodDonationHome() {
 
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
 
-            <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+            <Link
+              to="/donate-blood"
+              className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95"
+            >
               Donate Blood Today
-            </button>
+            </Link>
 
-            <button className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+            <Link
+              to="/find-donors"
+              className="flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 rounded-2xl border-2 border-gray-200 text-gray-600 font-bold text-base sm:text-lg hover:border-red-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1 active:scale-95"
+            >
               Find a Donation Center
-            </button>
+            </Link>
+
 
           </div>
 
