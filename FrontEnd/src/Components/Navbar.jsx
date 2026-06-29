@@ -56,7 +56,6 @@ const navLinks = [
   { name: "DONATE BLOOD", path: "/donate-blood" },
   { name: "FIND DONORS", path: "/find-donors" },
   { name: "OUR MISSION", path: "/mission" },
-  { name: "HOW TO HELP", path: "/help" },
   { name: "CONTACTS", path: "/contact" },
 ];
 
