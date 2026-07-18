@@ -209,12 +209,13 @@ export default function BloodCenterNavbar() {
           {/* Donate + Social side by side */}
           <div className="px-5 py-4 flex items-center justify-between border-b border-gray-100">
 
-            <button
-              className="bg-[#DC2626] hover:bg-red-700 transition-colors text-white font-bold text-[13px] uppercase px-5 py-2.5"
+            <Link
+              to="/donate-blood"
+              className="bg-[#DC2626] hover:bg-red-700 transition-colors text-white font-bold text-[13px] uppercase px-4 py-3 inline-block"
               style={{ letterSpacing: "0.1em" }}
             >
               DONATE NOW
-            </button>
+            </Link>
 
             <SocialIcons />
 

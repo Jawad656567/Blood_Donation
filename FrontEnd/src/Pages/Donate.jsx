@@ -222,7 +222,7 @@ export default function BloodDonation() {
       <div
         className="min-h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/health.png')",
+          backgroundImage: "url('healthhhh.png')",
         }}
       >
 
@@ -241,34 +241,36 @@ export default function BloodDonation() {
         {/* Page Grid */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 min-h-screen">
 
-          {/* ── LEFT HERO ── */}
-          <div className="flex flex-col justify-center items-start px-10 py-16 gap-7 md:items-start items-center text-center md:text-left">
+         {/* ── LEFT HERO ── */}
+<div className="flex flex-col justify-center items-start px-10 md:pl-20 py-16 gap-7 text-center md:text-left">
 
-            {/* Headline */}
-            <h1 className="text-4xl text-center md:text-5xl font-extrabold text-white leading-tight">
-              Donate Blood,<br />
-              <span className="text-red-600 ">Save Three Lives.</span>
-            </h1>
+  {/* Headline */}
+  <h1 className="text-4xl md:text-5xl font-extrabold text-red-900 leading-tight drop-shadow-sm">
+    Donate Blood,<br />
+    <span className="text-red-600">
+      Save Three Lives.
+    </span>
+  </h1>
 
-            <p className="text-white text-sm leading-relaxed max-w-sm">
-              Your donation can bring hope to someone fighting for life.
-              Every drop counts — become a hero today.
-            </p>
+  {/* Paragraph */}
+  <p className="text-gray-700 text-sm leading-relaxed max-w-sm">
+    Your donation can bring hope to someone fighting for life.
+    Every drop counts — become a hero today.
+  </p>
 
-            {/* SVG Illustration */}
-            <div className="w-full max-w-xs md:max-w-sm">
-              <HeroIllustration />
-            </div>
+  {/* SVG Illustration */}
+  <div className="w-full max-w-xs md:max-w-sm">
+    <HeroIllustration />
+  </div>
 
-          </div>
-
+</div>
           {/* ── RIGHT FORM ── */}
           <div className="flex items-center justify-center px-6 py-12">
             <div className="bg-white rounded-[30px] shadow-2xl w-full max-w-md p-8 md:p-9">
 
               {/* Card Header */}
               <div className="text-center mb-6">
-                <div className="text-3xl mb-1">❤️</div>
+             
                 <h2 className="text-lg font-bold text-red-950">Become a Blood Donor</h2>
                 <p className="text-xs text-gray-400 mt-1">Fill in your details below to register</p>
               </div>
@@ -381,7 +383,7 @@ export default function BloodDonation() {
                   hover:shadow-2xl hover:shadow-red-400/50 hover:-translate-y-0.5
                   active:translate-y-0 transition-all duration-300 cursor-pointer"
               >
-                <span>❤️</span> Register Now
+                Register Now
               </button>
 
               {/* Toast */}
