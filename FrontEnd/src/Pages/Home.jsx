@@ -483,7 +483,7 @@ export default function BloodDonationHome() {
               <img
                 src="/about.png"
                 alt="Blood Donation"
-                className="w-full h-[350px] md:h-[500px] object-cover rounded-2xl shadow-xl"
+                className="w-full h-[350px] md:h-[500px] object-cover  shadow-xl"
               />
 
 
@@ -573,7 +573,7 @@ export default function BloodDonationHome() {
             ].map((card, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-3xl overflow-hidden border border-red-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+                className="group bg-white  overflow-hidden border border-red-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
                 <div className="overflow-hidden">
                   <img
