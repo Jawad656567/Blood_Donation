@@ -270,10 +270,7 @@ export default function BloodDonationHome() {
   return (
     <div className="font-sans bg-white overflow-x-hidden">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
-        * { font-family: 'Sora', sans-serif; }
-        .font-body { font-family: 'Inter', sans-serif; }
-
+       
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           33% { transform: translateY(-14px) rotate(5deg); }

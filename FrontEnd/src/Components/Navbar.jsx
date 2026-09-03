@@ -91,7 +91,7 @@ export default function BloodCenterNavbar() {
   }, [isMobile]);
 
   return (
-    <div className="w-full font-sans">
+    <div className="w-full">
 
       {/* ══════════════ TOP BAR ══════════════ */}
       <div className="w-full bg-white border-b border-gray-200">
