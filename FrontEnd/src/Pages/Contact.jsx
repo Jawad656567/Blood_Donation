@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import {
@@ -23,16 +22,16 @@ const Contact = () => {
     <div className="min-h-screen bg-white text-slate-800">
 
       {/* ================= HERO ================= */}
-      <section className="bg-red-50">
+      <section className="bg-blue-50">
         <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
 
           <div className="flex flex-col items-center justify-between gap-10 md:flex-row">
 
             {/* Hero Text */}
             <div>
-              <h1 className="text-4xl font-bold text-red-950 md:text-5xl">
-                Contact Us
-              </h1>
+               <h1 className="text-4xl font-extrabold leading-tight text-[#071b52] sm:text-4xl lg:text-5xl">
+              Contact Us
+            </h1>
 
               <div className="mt-3 h-1 w-16 rounded-full bg-red-500"></div>
 

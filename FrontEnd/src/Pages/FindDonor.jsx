@@ -1059,9 +1059,9 @@ export default function FindDonors() {
 
       <div className="relative mx-auto max-w-[1450px] overflow-hidden rounded-xl">
         <div className="relative z-10">
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
-            Find Donors
-          </h1>
+          <h1 className="text-4xl font-extrabold leading-tight text-[#071b52] sm:text-3xl lg:text-3xl">
+              Find Donors
+            </h1>
 
           <p className="mt-1 max-w-[430px] text-[11px] leading-5 text-slate-500">
             Find and connect with blood donors

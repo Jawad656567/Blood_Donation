@@ -1,126 +1,292 @@
-function DropMarker() {
+import React from "react";
+import {
+  Heart,
+  MapPin,
+  Users,
+  Search,
+  Phone,
+  ArrowRight,
+} from "lucide-react";
+
+const Mission = () => {
+  const features = [
+    {
+      icon: <MapPin size={27} />,
+      title: "Find Locally",
+      description:
+        "Find blood donors in your local area quickly and easily.",
+    },
+    {
+      icon: <Users size={27} />,
+      title: "Connect Fast",
+      description:
+        "Connect with available donors when you need them most.",
+    },
+    {
+      icon: <Heart size={27} />,
+      title: "Save Lives",
+      description:
+        "Your search can save a life. Together, we make it possible.",
+    },
+  ];
+
+  const steps = [
+    {
+      number: "1",
+      icon: <Search size={24} />,
+      title: "Search",
+      description:
+        "Search for the blood group you need in your area.",
+    },
+    {
+      number: "2",
+      icon: <MapPin size={24} />,
+      title: "Find Donors",
+      description:
+        "Find available donors near you quickly and easily.",
+    },
+    {
+      number: "3",
+      icon: <Phone size={24} />,
+      title: "Connect",
+      description:
+        "Contact the donor easily through call or message.",
+    },
+    {
+      number: "4",
+      icon: <Heart size={24} />,
+      title: "Save Lives",
+      description:
+        "Your action can save a precious life.",
+    },
+  ];
+
   return (
-    <span className="relative z-10 flex items-center justify-center w-7 h-7 rounded-full bg-white border-2 border-rose-200 shadow-sm">
-      <svg width="10" height="13" viewBox="0 0 28 36" className="fill-red-700">
-        <path d="M14 0 C14 0 0 18 0 25 a14 14 0 0 0 28 0 C28 18 14 0 14 0z" />
-      </svg>
-    </span>
-  );
-}
+    <div className="min-h-screen bg-[#f7faff] text-[#10245c]">
 
-const phases = [
-  {
-    num: "01",
-    title: "Find",
-    body: "We match a patient's need to the nearest willing donor by blood group, city, and availability — in seconds, not days.",
-  },
-  {
-    num: "02",
-    title: "Give",
-    body: "One donation takes about fifteen minutes, and the body replenishes what's given — safely repeatable every ninety days.",
-  },
-  {
-    num: "03",
-    title: "Save",
-    body: "A single pint is separated and shared — reaching a trauma patient, a surgery ward, and a child with chronic illness, all at once.",
-  },
-];
+      {/* ================= HERO BANNER ================= */}
+      <section className="relative h-[420px] w-full overflow-hidden sm:h-[450px] lg:h-[400px]">
 
-const stats = [
-  { value: "3", label: "Lives touched by one donation" },
-  { value: "90", label: "Days until you're eligible again" },
-  { value: "15", label: "Minutes is all it takes" },
-];
+        {/* FULL WIDTH BANNER IMAGE */}
+        <img
+          src="mission.png"
+          alt="Blood donation"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
 
-export default function OurMission() {
-  return (
-    <section className="relative overflow-hidden bg-[#fff6f4]">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
-        .mission-serif { font-family: 'Fraunces', serif; }
-        .mission-sans { font-family: 'Inter', sans-serif; }
-        @keyframes bloodflow {
-          0%   { top: -12%; opacity: 0; }
-          10%  { opacity: 1; }
-          90%  { opacity: 1; }
-          100% { top: 108%; opacity: 0; }
-        }
-        .flow-pulse {
-          animation: bloodflow 3.6s ease-in-out infinite;
-        }
-        @keyframes softbeat {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.12); }
-        }
-        .beat { animation: softbeat 2.6s ease-in-out infinite; }
-      `}</style>
+        {/* CONTENT */}
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-7 sm:px-10 lg:px-16">
 
-      {/* soft ambient wash, restrained */}
-      <div className="absolute w-[520px] h-[520px] bg-rose-200/25 rounded-full blur-3xl -top-40 -right-32 pointer-events-none" />
-      <div className="absolute w-[420px] h-[420px] bg-red-100/40 rounded-full blur-3xl bottom-0 -left-40 pointer-events-none" />
+          <div className="max-w-xl">
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-24 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-8">
-        {/* ── LEFT: statement ── */}
-        <div className="flex flex-col justify-center">
-          <span className="mission-sans text-[11px] font-semibold tracking-[0.22em] text-red-700 uppercase mb-5">
-            Our Mission
-          </span>
+            <h1 className="text-4xl font-extrabold leading-tight text-[#071b52] sm:text-5xl lg:text-6xl">
+              Our Mission
+            </h1>
 
-          <h2 className="mission-serif text-[2.4rem] md:text-[3.1rem] leading-[1.08] text-[#3a1214] mb-6">
-            One pint can{" "}
-            <span className="italic font-medium text-red-700">rewrite</span>{" "}
-            someone's story.
-          </h2>
+            <p className="mt-4 text-base leading-7 text-[#536685] sm:text-lg">
+              Making blood easy to find.
+              <br />
+              Saving more lives.
+            </p>
 
-          <p className="mission-sans text-[15px] leading-relaxed text-[#6b4b4d] max-w-md mb-8">
-            Somewhere nearby, a patient is waiting on blood that hasn't arrived yet.
-            We exist to close that distance — connecting willing donors to the people
-            who need them, before the wait becomes the danger.
-          </p>
-
-          <div>
-            <button className="mission-sans inline-flex items-center gap-2 bg-gradient-to-r from-red-700 to-rose-500 text-white text-sm font-semibold rounded-full pl-6 pr-5 py-3 hover:shadow-xl hover:shadow-red-300/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer">
-              Join the network
-              <span className="beat inline-block">→</span>
+            <button className="mt-7 inline-flex items-center gap-2 rounded-md bg-red-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-red-700">
+              <Heart size={17} />
+              Join Us
             </button>
+
           </div>
 
-          {/* stat strip — thin dividers, no boxes */}
-          <div className="mission-sans flex mt-14 divide-x divide-rose-200/70">
-            {stats.map((s, i) => (
-              <div key={s.label} className={`flex-1 ${i === 0 ? "pr-6" : "px-6"}`}>
-                <div className="mission-serif text-3xl text-red-800 tabular-nums">{s.value}</div>
-                <div className="text-[11.5px] text-[#8a6567] leading-snug mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* ── RIGHT: the bloodline — signature element ── */}
-        <div className="relative pl-10 flex flex-col justify-center gap-14 py-4">
-          {/* vertical vein */}
-          <div className="absolute left-3 top-2 bottom-2 w-[2px] bg-gradient-to-b from-rose-200 via-red-200 to-rose-200 rounded-full overflow-hidden">
-            <div className="flow-pulse absolute left-0 w-[2px] h-20 bg-gradient-to-b from-transparent via-red-600 to-transparent" />
-          </div>
+      </section>
 
-          {phases.map((p) => (
-            <div key={p.num} className="relative flex gap-5">
-              <div className="absolute -left-7 top-0.5">
-                <DropMarker />
+
+      {/* =====================================================
+          3 FEATURE CARDS
+      ====================================================== */}
+      <section className="px-5 py-10 sm:px-8 lg:px-10">
+
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-3">
+
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="group rounded-xl border border-red-100 bg-white px-6 py-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+
+              {/* ICON */}
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-red-50 text-black transition group-hover:bg-white">
+                {feature.icon}
               </div>
-              <div>
-                <div className="mission-sans flex items-baseline gap-2.5 mb-1.5">
-                  <span className="mission-serif italic text-red-300 text-sm">{p.num}</span>
-                  <h3 className="mission-serif text-xl text-[#3a1214]">{p.title}</h3>
-                </div>
-                <p className="mission-sans text-[13.5px] leading-relaxed text-[#7a5658] max-w-sm">
-                  {p.body}
-                </p>
-              </div>
+
+              {/* TITLE */}
+              <h3 className="mt-5 text-base font-bold text-[#10245c]">
+                {feature.title}
+              </h3>
+
+              {/* SMALL LINE */}
+              <div className="mx-auto mt-2 h-1 w-9 rounded-full bg-red-500" />
+
+              {/* DESCRIPTION */}
+              <p className="mx-auto mt-4 max-w-xs text-sm leading-6 text-slate-500">
+                {feature.description}
+              </p>
+
             </div>
           ))}
+
         </div>
-      </div>
-    </section>
+
+      </section>
+
+
+      {/* =====================================================
+          HOW IT HELPS
+      ====================================================== */}
+      <section className="px-5 py-12 sm:px-8 lg:px-10">
+
+        <div className="mx-auto max-w-7xl">
+
+          {/* HEADING */}
+          <div className="text-center">
+
+            <h2 className="text-2xl font-extrabold text-[#10245c] sm:text-3xl">
+              How It Helps
+            </h2>
+
+            <p className="mx-auto mt-2 max-w-lg text-sm text-slate-500">
+              Finding blood becomes simple with just a few easy steps.
+            </p>
+
+          </div>
+
+
+          {/* STEPS */}
+          <div className="relative mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+
+            {/* CONNECTING LINE - DESKTOP */}
+            <div className="absolute left-[12%] right-[12%] top-8 hidden h-[2px]  lg:block" />
+
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="relative z-10 text-center"
+              >
+
+                {/* ICON CIRCLE */}
+                <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-full border-4 border-[#fff5f5] bg-white text-black shadow-md">
+                  {step.icon}
+
+                  {/* NUMBER */}
+                  <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white">
+                    {step.number}
+                  </span>
+                </div>
+
+
+                {/* TITLE */}
+                <h3 className="mt-4 text-sm font-bold text-[#10245c]">
+                  {step.title}
+                </h3>
+
+
+                {/* DESCRIPTION */}
+                <p className="mx-auto mt-2 max-w-[190px] text-xs leading-5 text-slate-500">
+                  {step.description}
+                </p>
+
+
+                {/* ARROW */}
+                {index !== steps.length - 1 && (
+                  <div className="absolute right-[-18px] top-6 hidden text-red-300 lg:block">
+                    <ArrowRight size={22} />
+                  </div>
+                )}
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          BOTTOM CTA
+      ====================================================== */}
+      <section className="px-5 py-10 sm:px-8 lg:px-10">
+
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 rounded-xl border border-red-100 bg-white px-7 py-7 shadow-sm sm:flex-row">
+
+          {/* LEFT ICON */}
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
+
+            <Heart
+              size={32}
+              fill="currentColor"
+            />
+
+          </div>
+
+
+          {/* TEXT */}
+          <div className="flex-1 text-center sm:text-left">
+
+            <h2 className="text-lg font-bold text-[#10245c]">
+              Together, we can save more lives.
+            </h2>
+
+            <p className="mt-1 text-sm text-slate-500">
+              Be the reason someone lives. Donate blood and make a real
+              difference.
+            </p>
+
+          </div>
+
+
+          {/* BUTTON */}
+          <button className="inline-flex items-center gap-2 rounded-md bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">
+
+            <Heart size={16} />
+
+            Become a Blood Donor
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FOOTER
+      ====================================================== */}
+      <footer className="border-t border-blue-100 bg-white px-6 py-7 text-center">
+
+        <div className="flex items-center justify-center gap-2">
+
+          <Heart
+            size={18}
+            fill="currentColor"
+            className="text-blue-600"
+          />
+
+          <span className="text-sm font-bold text-[#10245c]">
+            Every Drop Can Make a Difference
+          </span>
+
+        </div>
+
+        <p className="mt-2 text-xs text-slate-500">
+          Find a donor. Donate blood. Save a life.
+        </p>
+
+      </footer>
+
+    </div>
   );
-}
+};
+
+export default Mission;

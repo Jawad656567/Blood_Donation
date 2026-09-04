@@ -247,9 +247,13 @@ export default function BloodDonation() {
           <div className="flex flex-col justify-center items-start px-10 md:pl-20 py-16 gap-7 text-center md:text-left">
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl font-extrabold text-red-900 leading-tight drop-shadow-sm">
-              Donate Blood,<br />
-              <span className="text-red-600">
+
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-sm">
+              <span className="text-[#071b52]">
+                Donate Blood,
+              </span>
+              <br />
+              <span className="text-gray-700">
                 Save Three Lives.
               </span>
             </h1>
